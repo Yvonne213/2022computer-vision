@@ -15,10 +15,13 @@ let fallingLetters = [];
 //sound
 var song;
 
-
+function preload() {
+ song = loadSound("aaayyy.mp4");
+  
+}
 function setup() {
   createCanvas(w, h);
-//song = loadSound(".mp3",loaded);
+
 
   capture = createCapture(VIDEO);
   capture.size(w, h);
@@ -33,13 +36,13 @@ function setup() {
   //let sourceText = "?><!@#$%^&*()-+~</)(^&^$%#@@!~`/,';][{}|/]'`)";
    let sourceText = [
      " " ," " ,":-0"," " ,
-     "Open"," "," "," ",
+     "Open"," "," ",
      "Your "," " ," "," ",
      "Month"," " ," "," ",
      "Or"," " ," "," ",
-     "Smile"," " ," "," ",
-     ":)"," " ," "," ",
-     "Error"," " ," "," ",
+     "Smile"," " ," ",
+     ":)"," "," or" ,"get"," ","close",
+     "to","me" ," "," ",
                      ]
 
   for (let i = 0; i < sourceText.length; i++) {
@@ -139,9 +142,12 @@ let landmarkIndex = 0;
       // line(p1x,p1y,p2x,p2y);
       
       //song play
-      //  if(d>8){
-      //   song.play();
-      // }
+      if(d>8){
+      song.play();
+      }
+      if(d<8){
+          song.stop();
+        }
       
       //jaw
       push();
@@ -173,6 +179,9 @@ let landmarkIndex = 0;
         if(d<8 && d>1){
         fill(c4, c2, c3)
       }
+        if(d2>75){
+           fill(0,random(255),0);
+        }
       }
       endShape(CLOSE);
       //Red Face
@@ -189,8 +198,12 @@ let landmarkIndex = 0;
         const c4 = map(cos(frameCount/rate),-1,1,0,255)
         
         if(d<8 && d>1){
-        fill(c4, c2, c3)
+        fill(c2, c1, c1)
       }
+        if(d2>75){
+        fill(0,random(255),0);
+        }
+        
       }
       endShape(CLOSE);
       
@@ -206,9 +219,14 @@ let landmarkIndex = 0;
         const c2 = map(d, 1, 8, 255,0)
        
         if(d<8 && d>1){
-         stroke(c2, c2, c1)
+         // stroke(c2, c2, c1)
+         // fill(c1, 0, c1);
+          stroke(c1, c1, c2)
          fill(c1, 0, c1);
       }
+        if (d2>75){
+           fill(random(255),random(255),random(255));
+        }
         
         curveVertex(lb[0], lb[1]);
       }
@@ -283,6 +301,9 @@ let landmarkIndex = 0;
         if(d<8 && d>1){
         fill(c4, c2, c3)
       }
+        if(d2>75){
+           fill(0,random(255),0);
+        }
       }
       endShape(CLOSE);
 
@@ -302,6 +323,9 @@ let landmarkIndex = 0;
          stroke(c1, c1, c2)
          fill(c1, 0, c1);
       }
+        if (d2>75){
+           fill(random(255),random(255),random(255));
+        }
       }
       endShape(CLOSE);
       pop();
