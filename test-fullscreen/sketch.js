@@ -33,6 +33,7 @@ function setup() {
   //falling
   const size = 20;
   textSize(size);
+  
 
   //let sourceText = "?><!@#$%^&*()-+~</)(^&^$%#@@!~`/,';][{}|/]'`)";
   let sourceText = [
@@ -168,11 +169,11 @@ function draw() {
       push()
       scale(setScale(), setScale())
       // add mirror code
-      const stepSize = 30;
+      const stepSize = 20;
       capture.loadPixels()
       for(let y=0;y<capture.height; y+=stepSize){
         for(let x=0;x<capture.width;x+=stepSize){
-          const i= (x+y*width)*4
+          const i= (x+y*capture.width)*4
           const r = capture.pixels[i];
           const g =  capture.pixels[i+1];
            const b = capture.pixels[i+2];
@@ -181,8 +182,13 @@ function draw() {
          fill(r,g,b);
          stroke(0);
          strokeWeight(2);
+      
+         push();
+    
+         translate(w, 0);
+         scale(-1, 1);
          rect(x, y, stepSize, stepSize);
-     
+      pop();
          
           // do the mirror stuff
         }
