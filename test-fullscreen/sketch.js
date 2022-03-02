@@ -20,6 +20,7 @@ function preload() {
   
 }
 function setup() {
+  //fullscreem1
   createCanvas(innerWidth, innerHeight);
 
 
@@ -567,11 +568,13 @@ async function getFaces() {
   }
 }
 
+//fullscreen2
 function windowResized(){
-  createCanvas（innerWidth，innerHeight）
+  createCanvas(innerWidth,innerHeight)
   }
-  
-  function setScale() {
-    if(innerWidth/w >= innerHeight/h) { return innerWidth/w; }
-    else { return innerHeight/h; }
-  }
+
+ //fullscreen3
+ function setScale() {
+  if(innerWidth/w >= innerHeight/h) { return innerWidth/w; }
+  else { return innerHeight/h; }
+}
