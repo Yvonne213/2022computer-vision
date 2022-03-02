@@ -129,17 +129,22 @@ function draw() {
       //righteyebrow
       const rightEyeBrow = [21, 71, 53, 223, 65, 222, 28, 27, 224, 46, 162];
 
+      // const lp = [13][0]
+      // const lp = [13][1]
       const lp = [13]
       const lp2 = [14]
       const lw1 = [79]
       const lw2 = [309]
 
+      // const lp = createVector(f.scaledMesh[13][0], f.scaledMesh[13][1])
       //diatance
       const tlp = f.scaledMesh[14];
       const dlp = f.scaledMesh[15]
       const lwp1 = f.scaledMesh[62];
       const lwp2 = f.scaledMesh[292]
       // console.log(tlp, dlp);
+
+      // let p1 = createVector(tlp[0], tlp[1]);
       let p1x = tlp[0]
       let p1y = tlp[1]
       let p2x = dlp[0]
