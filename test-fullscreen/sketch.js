@@ -60,18 +60,19 @@ function setup() {
 function draw() {
   background(200);
 
-  push();
-    scale(setScale(), setScale());
-    translate(w, 0);
-    scale(-1, 1);
-    image(capture, 0, 0);
-  pop();
+  // push();
+  //   scale(setScale(), setScale());
+  //   translate(w, 0);
+  //   scale(-1, 1);
+  //   image(capture, 0, 0);
+  // pop();
 
   if (capture.loadedmetadata && model !== undefined) {
     getFaces();
   }
 
   push();
+  scale(setScale(), setScale());
   translate(w, 0);
   scale(-1, 1);
   image(capture, 0, 0);
