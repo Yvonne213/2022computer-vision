@@ -4,10 +4,5 @@ html, body {
 }
 canvas {
   display: block;
-  border:5px solid rgb(0, 0, 0);
-box-shadow:0 10px 20px -10px;
-position: absolute;
-left:50%;
-top:50%;
-transform: translate(-50%,-50%) scale(1.5);
+ 
 }
