@@ -20,7 +20,7 @@ function preload() {
   
 }
 function setup() {
-  createCanvas(w, h);
+  createCanvas(innerWidth, innerHeight);
 
 
   capture = createCapture(VIDEO);
@@ -58,6 +58,14 @@ function setup() {
 
 function draw() {
   background(200);
+
+  push();
+    scale(setScale(), setScale());
+    translate(w, 0);
+    scale(-1, 1);
+    image(capture, 0, 0);
+  pop();
+
   if (capture.loadedmetadata && model !== undefined) {
     getFaces();
   }
@@ -558,3 +566,12 @@ async function getFaces() {
     faces = predictions;
   }
 }
+
+function windowResized(){
+  createCanvas（innerWidth，innerHeight）
+  }
+  
+  function setScale() {
+    if(innerWidth/w >= innerHeight/h) { return innerWidth/w; }
+    else { return innerHeight/h; }
+  }
