@@ -168,17 +168,26 @@ function draw() {
       push()
       scale(setScale(), setScale())
       // add mirror code
-      const stepSize = 40;
+      const stepSize = 30;
       capture.loadPixels()
-      for (let y = 0; y < height; y += stepSize) {
-        for (let x = 0; x < width; x++) {
-          const i = (x + y * width) * 4
+      for(let y=0;y<capture.height; y+=stepSize){
+        for(let x=0;x<capture.width;x+=stepSize){
+          const i= (x+y*width)*4
+          const r = capture.pixels[i];
+          const g =  capture.pixels[i+1];
+           const b = capture.pixels[i+2];
+         const brightness = (r+g+b)/3
 
-          rect(x, y, stepSize/2, stepSize/2)
+         fill(r,g,b);
+         stroke(0);
+         strokeWeight(2);
+         rect(x, y, stepSize, stepSize);
+     
+         
           // do the mirror stuff
         }
       }
-
+      capture.updatePixels();
       //jaw
       push();
       beginShape();
