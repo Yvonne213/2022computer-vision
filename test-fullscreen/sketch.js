@@ -129,42 +129,17 @@ function draw() {
       //righteyebrow
       const rightEyeBrow = [21, 71, 53, 223, 65, 222, 28, 27, 224, 46, 162];
 
-      // const lp = [13][0]
-      // const lp = [13][1]
-      // const lp = [13]
-      // const lp2 = [14]
-      // const lw1 = [79]
-      // const lw2 = [309]
 
       const tlp = createVector(f.scaledMesh[14][0], f.scaledMesh[14][1])
       const dlp = createVector(f.scaledMesh[15][0], f.scaledMesh[15][1])
       const llp = createVector(f.scaledMesh[62][0], f.scaledMesh[62][1])
       const rlp = createVector(f.scaledMesh[292][0], f.scaledMesh[292][1])
       //diatance
-      // const tlp = f.scaledMesh[14];
-      // const dlp = f.scaledMesh[15]
-      // const lwp1 = f.scaledMesh[62];
-      // const lwp2 = f.scaledMesh[292]
-      // console.log(tlp, dlp);
-
-      // let p1 = createVector(tlp[0], tlp[1]);
-      // let p1x = tlp[0]
-      // let p1y = tlp[1]
-      // let p2x = dlp[0]
-      // let p2y = dlp[1]
-
-      // let p3x = lwp1[0]
-      // let p3y = lwp1[1]
-      // let p4x = lwp2[0]
-      // let p4y = lwp2[1]
+  
       // console.log(tlp[0],tlp[1])
       let d = dist(tlp.x,tlp.y,dlp.x,dlp.y);
       let d2 = dist(llp.x, llp.y, rlp.x, rlp.y);
       console.log(d2); //test
-      //test:
-      // stroke(255, 0, 0);
-      // strokeWeight(5); 
-      // line(p1x,p1y,p2x,p2y);
 
       //song play
       if (d > 8) {
